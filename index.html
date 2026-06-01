@@ -3,6 +3,7 @@
 <head>
     <title>Vanguard Code — نبني المستقبل الرقمي</title>
 <meta charset="UTF-8">
+<link rel="icon" href="favicon.png" type="image/png">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Vanguard Code — نبني المستقبل الرقمي</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -17,14 +18,20 @@
 <!-- NAV -->
 <nav>
   <a class="logo" href="#">Vanguard <span>Code</span></a>
-  <ul>
-    <li><a href="#services">خدماتنا</a></li>
-    <li><a href="#portfolio">أعمالنا</a></li>
-    <li><a href="#why">لماذا نحن</a></li>
-    <li><a href="#process">آلية العمل</a></li>
-    <li><a href="#contact">تواصل معنا</a></li>
-  </ul>
-  <button class="nav-cta" onclick="document.querySelector('#contact').scrollIntoView({behavior:'smooth'})">اطلب استشارة</button>
+  <div class="nav-right">
+    <div class="lang-switch">
+      <button class="lang-btn active" type="button" onclick="setLanguage('ar')">العربية</button>
+      <button class="lang-btn" type="button" onclick="setLanguage('en')">English</button>
+    </div>
+    <ul>
+      <li><a id="navServices" data-i18n="navServices" href="#services">خدماتنا</a></li>
+      <li><a id="navPortfolio" data-i18n="navPortfolio" href="#portfolio">أعمالنا</a></li>
+      <li><a id="navWhy" data-i18n="navWhy" href="#why">لماذا نحن</a></li>
+      <li><a id="navProcess" data-i18n="navProcess" href="#process">آلية العمل</a></li>
+      <li><a id="navContact" data-i18n="navContact" href="#contact">تواصل معنا</a></li>
+    </ul>
+    <button id="navCta" class="nav-cta" data-i18n="navCta" onclick="document.querySelector('#contact').scrollIntoView({behavior:'smooth'})">اطلب استشارة</button>
+  </div>
 </nav>
 
 <!-- HERO -->
@@ -37,16 +44,16 @@
     <div class="particles" id="particles"></div>
   </div>
   <div class="hero-content">
-    <div class="hero-badge">PREMIUM DIGITAL STUDIO — CAIRO</div>
-    <h1 class="hero-title">
+    <div class="hero-badge" id="heroBadge" data-i18n="heroBadge">PREMIUM DIGITAL STUDIO — CAIRO</div>
+    <h1 class="hero-title" id="heroTitle" data-i18n="heroTitle" data-i18n-html="true">
       نحن لا نصمم واجهات فقط<br>
       <span class="line-gold">نبني المستقبل الرقمي</span><br>
       لعملك
     </h1>
-    <p class="hero-sub">Crafting Premium Digital Experiences that Convert</p>
+    <p class="hero-sub" id="heroSub" data-i18n="heroSub">Crafting Premium Digital Experiences that Convert</p>
     <div class="hero-btns">
-      <button class="btn-primary" onclick="document.querySelector('#contact').scrollIntoView({behavior:'smooth'})">ابدأ مشروعك معنا ←</button>
-      <button class="btn-secondary" onclick="document.querySelector('#portfolio').scrollIntoView({behavior:'smooth'})">استعرض أعمالنا</button>
+      <button id="heroBtn1" class="btn-primary" data-i18n="heroBtn1" onclick="document.querySelector('#contact').scrollIntoView({behavior:'smooth'})">ابدأ مشروعك معنا ←</button>
+      <button id="heroBtn2" class="btn-secondary" data-i18n="heroBtn2" onclick="document.querySelector('#portfolio').scrollIntoView({behavior:'smooth'})">استعرض أعمالنا</button>
     </div>
     <div class="hero-stats">
       <div><div class="stat-num" data-count="40">0</div><div class="stat-label">مشروع منجز</div></div>
@@ -59,29 +66,29 @@
 <!-- SERVICES -->
 <section id="services">
   <div class="section-header reveal">
-    <div class="section-tag">WHAT WE DO</div>
-    <h2 class="section-title">خدماتنا المتكاملة</h2>
-    <p class="section-desc">نقدم حلولاً رقمية فاخرة مبنية على فهم عميق لأهداف عملك وهوية علامتك التجارية.</p>
+    <div class="section-tag" id="servicesTag" data-i18n="servicesTag">WHAT WE DO</div>
+    <h2 class="section-title" id="servicesTitle" data-i18n="servicesTitle">خدماتنا المتكاملة</h2>
+    <p class="section-desc" id="servicesDesc" data-i18n="servicesDesc">نقدم حلولاً رقمية فاخرة مبنية على فهم عميق لأهداف عملك وهوية علامتك التجارية.</p>
   </div>
   <div class="services-grid reveal">
     <div class="service-card">
       <div class="service-num">01</div>
       <div class="service-icon">✦</div>
-      <div class="service-name">تصميم واجهات المستخدم</div>
-      <p class="service-desc">تصاميم UI/UX مخصصة بالكامل لمواقعك وتطبيقاتك ولوحات التحكم التفاعلية. نعمل على Figma بنظام تصميم متكامل.</p>
+      <div class="service-name" data-i18n="service1Name">تصميم واجهات المستخدم</div>
+      <p class="service-desc" data-i18n="service1Desc">تصاميم UI/UX مخصصة بالكامل لمواقعك وتطبيقاتك ولوحات التحكم التفاعلية. نعمل على Figma بنظام تصميم متكامل.</p>
     </div>
     <div class="service-card">
       <div class="service-num">02</div>
       <div class="service-icon">⬡</div>
-      <div class="service-name">تطوير المواقع والبرمجة</div>
-      <p class="service-desc">تحويل تصاميمنا إلى كود نظيف وأداء عالٍ. نتعاون مع أفضل المطورين لضمان منتج نهائي متكامل ومتجاوب.</p>
-      <div class="badge-soon">COMING SOON</div>
+      <div class="service-name" data-i18n="service2Name">تطوير المواقع والبرمجة</div>
+      <p class="service-desc" data-i18n="service2Desc">تحويل تصاميمنا إلى كود نظيف وأداء عالٍ. نتعاون مع أفضل المطورين لضمان منتج نهائي متكامل ومتجاوب.</p>
+      <div class="badge-soon" data-i18n="service2Badge">COMING SOON</div>
     </div>
     <div class="service-card">
       <div class="service-num">03</div>
       <div class="service-icon">◈</div>
-      <div class="service-name">هوية بصرية وبراندينج</div>
-      <p class="service-desc">بناء هوية بصرية قوية ومتماسكة من شعار وألوان وأنماط تحمل شخصية علامتك التجارية وتميّزها في السوق.</p>
+      <div class="service-name" data-i18n="service3Name">هوية بصرية وبراندينج</div>
+      <p class="service-desc" data-i18n="service3Desc">بناء هوية بصرية قوية ومتماسكة من شعار وألوان وأنماط تحمل شخصية علامتك التجارية وتميّزها في السوق.</p>
     </div>
   </div>
 </section>
@@ -89,15 +96,15 @@
 <!-- PORTFOLIO -->
 <section id="portfolio">
   <div class="section-header reveal">
-    <div class="section-tag">OUR WORK(wireframe)</div>
-    <h2 class="section-title">معرض الأعمال</h2>
-    <p class="section-desc">نماذج تصميمية مميزة تعكس قدراتنا في تقديم تجارب بصرية فاخرة لمختلف المجالات.</p>
+    <div class="section-tag" id="portfolioTag">OUR WORK(wireframe)</div>
+    <h2 class="section-title" id="portfolioTitle">معرض الأعمال</h2>
+    <p class="section-desc" id="portfolioDesc">نماذج تصميمية مميزة تعكس قدراتنا في تقديم تجارب بصرية فاخرة لمختلف المجالات.</p>
   </div>
   <div class="portfolio-filters reveal">
-    <button class="filter-btn active">الكل</button>
-    <button class="filter-btn">متاجر إلكترونية</button>
-    <button class="filter-btn">مواقع شركات</button>
-    <button class="filter-btn">لوحات تحكم</button>
+    <button class="filter-btn active" data-i18n="portfolioFilterAll">الكل</button>
+    <button class="filter-btn" data-i18n="portfolioFilterEcommerce">متاجر إلكترونية</button>
+    <button class="filter-btn" data-i18n="portfolioFilterCompany">مواقع شركات</button>
+    <button class="filter-btn" data-i18n="portfolioFilterDashboard">لوحات تحكم</button>
   </div>
   <div class="portfolio-grid reveal">
     <div class="portfolio-item large">
@@ -116,9 +123,9 @@
         </div>
       </div>
       <div class="portfolio-overlay">
-        <div class="portfolio-tag">CONCEPT — موقع عقارات</div>
-        <div class="portfolio-name">Luxe Estates — وجهة العقار الفاخر</div>
-        <a href="#" class="portfolio-link">عرض النموذج التفاعلي </a>
+        <div class="portfolio-tag" data-i18n="portfolio1Tag">CONCEPT — موقع عقارات</div>
+        <div class="portfolio-name" data-i18n="portfolio1Name">Luxe Estates — وجهة العقار الفاخر</div>
+        <a href="#" class="portfolio-link" data-i18n="portfolioLink">عرض النموذج التفاعلي </a>
       </div>
     </div>
     <div class="portfolio-item">
@@ -133,9 +140,9 @@
         </div>
       </div>
       <div class="portfolio-overlay">
-        <div class="portfolio-tag">CONCEPT — متجر ساعات فاخرة</div>
-        <div class="portfolio-name">Chronos — متجر الفخامة</div>
-        <a href="#" class="portfolio-link">عرض النموذج التفاعلي </a>
+        <div class="portfolio-tag" data-i18n="portfolio2Tag">CONCEPT — متجر ساعات فاخرة</div>
+        <div class="portfolio-name" data-i18n="portfolio2Name">Chronos — متجر الفخامة</div>
+        <a href="#" class="portfolio-link" data-i18n="portfolioLink">عرض النموذج التفاعلي </a>
       </div>
     </div>
     <div class="portfolio-item">
@@ -160,9 +167,9 @@
         </div>
       </div>
       <div class="portfolio-overlay">
-        <div class="portfolio-tag">CONCEPT — لوحة تحكم SaaS</div>
-        <div class="portfolio-name">Analytics Pro Dashboard</div>
-        <a href="#" class="portfolio-link">عرض النموذج التفاعلي </a>
+        <div class="portfolio-tag" data-i18n="portfolio3Tag">CONCEPT — لوحة تحكم SaaS</div>
+        <div class="portfolio-name" data-i18n="portfolio3Name">Analytics Pro Dashboard</div>
+        <a href="#" class="portfolio-link" data-i18n="portfolioLink">عرض النموذج التفاعلي </a>
       </div>
     </div>
     <div class="portfolio-item">
@@ -180,9 +187,9 @@
         </div>
       </div>
       <div class="portfolio-overlay">
-        <div class="portfolio-tag">CONCEPT — متجر إلكتروني</div>
-        <div class="portfolio-name">Nova Store — تجربة تسوق فريدة</div>
-        <a href="#" class="portfolio-link">عرض النموذج التفاعلي </a>
+        <div class="portfolio-tag" data-i18n="portfolio4Tag">CONCEPT — متجر إلكتروني</div>
+        <div class="portfolio-name" data-i18n="portfolio4Name">Nova Store — تجربة تسوق فريدة</div>
+        <a href="#" class="portfolio-link" data-i18n="portfolioLink">عرض النموذج التفاعلي </a>
       </div>
     </div>
   </div>
@@ -192,14 +199,14 @@
 <section id="why">
   <div class="why-grid">
     <div class="reveal">
-      <div class="section-tag">WHY VANGUARD</div>
-      <h2 class="section-title">ما الذي يجعلنا مختلفين؟</h2>
-      <p class="section-desc">لسنا مجرد مصممين نضع شاشات جميلة. نحن شركاء نجاح رقميين نفكر بمنطق الأعمال ونصنع تجارب تحوّل الزوار إلى عملاء.</p>
+      <div class="section-tag" id="whyTag" data-i18n="whyTag">WHY VANGUARD</div>
+      <h2 class="section-title" id="whyTitle" data-i18n="whyTitle">ما الذي يجعلنا مختلفين؟</h2>
+      <p class="section-desc" id="whyDesc" data-i18n="whyDesc">لسنا مجرد مصممين نضع شاشات جميلة. نحن شركاء نجاح رقميين نفكر بمنطق الأعمال ونصنع تجارب تحوّل الزوار إلى عملاء.</p>
       <div class="why-numbers">
-        <div class="why-num-box"><div class="why-big">100%</div><div class="why-label">تصاميم مخصصة</div></div>
-        <div class="why-num-box"><div class="why-big">48h</div><div class="why-label">أول عرض أولي</div></div>
-        <div class="why-num-box"><div class="why-big">∞</div><div class="why-label">تعديلات مجانية</div></div>
-        <div class="why-num-box"><div class="why-big">A+</div><div class="why-label">ملفات Figma منظمة</div></div>
+        <div class="why-num-box"><div class="why-big">100%</div><div class="why-label" data-i18n="whyStat1">تصاميم مخصصة</div></div>
+        <div class="why-num-box"><div class="why-big">48h</div><div class="why-label" data-i18n="whyStat2">أول عرض أولي</div></div>
+        <div class="why-num-box"><div class="why-big">∞</div><div class="why-label" data-i18n="whyStat3">تعديلات مجانية</div></div>
+        <div class="why-num-box"><div class="why-big">A+</div><div class="why-label" data-i18n="whyStat4">ملفات Figma منظمة</div></div>
       </div>
     </div>
     <div class="why-visual reveal">
@@ -207,29 +214,29 @@
         <div class="why-feature">
           <div class="why-icon">◈</div>
           <div>
-            <div class="why-feat-title">فخامة بصرية لا تُنسى</div>
-            <p class="why-feat-desc">تصاميم مخصصة 100% تناسب هوية براندك. لا قوالب مستهلكة، كل مشروع يُعامَل كعمل فني فريد.</p>
+            <div class="why-feat-title" data-i18n="whyFeat1Title">فخامة بصرية لا تُنسى</div>
+            <p class="why-feat-desc" data-i18n="whyFeat1Desc">تصاميم مخصصة 100% تناسب هوية براندك. لا قوالب مستهلكة، كل مشروع يُعامَل كعمل فني فريد.</p>
           </div>
         </div>
         <div class="why-feature">
           <div class="why-icon">⬡</div>
           <div>
-            <div class="why-feat-title">تسليم منظم — Design System</div>
-            <p class="why-feat-desc">نسلّم ملفات Figma بنظام تصميم كامل يجعل عملية التكويد أسرع بـ60% وبدون أخطاء في التفسير.</p>
+            <div class="why-feat-title" data-i18n="whyFeat2Title">تسليم منظم — Design System</div>
+            <p class="why-feat-desc" data-i18n="whyFeat2Desc">نسلّم ملفات Figma بنظام تصميم كامل يجعل عملية التكويد أسرع بـ60% وبدون أخطاء في التفسير.</p>
           </div>
         </div>
         <div class="why-feature">
           <div class="why-icon">✦</div>
           <div>
-            <div class="why-feat-title">تفكير UX يزيد المبيعات</div>
-            <p class="why-feat-desc">نصمم رحلة المستخدم بعناية لتقليل معدل الارتداد وزيادة معدل التحويل وتجعل التصفح تجربة ممتعة وآمنة.</p>
+            <div class="why-feat-title" data-i18n="whyFeat3Title">تفكير UX يزيد المبيعات</div>
+            <p class="why-feat-desc" data-i18n="whyFeat3Desc">نصمم رحلة المستخدم بعناية لتقليل معدل الارتداد وزيادة معدل التحويل وتجعل التصفح تجربة ممتعة وآمنة.</p>
           </div>
         </div>
         <div class="why-feature">
           <div class="why-icon">▲</div>
           <div>
-            <div class="why-feat-title">شفافية كاملة في التواصل</div>
-            <p class="why-feat-desc">تحديثات منتظمة، نسخ تفاعلية للمراجعة قبل التسليم النهائي، ولا مفاجآت في الأسعار أو المواعيد.</p>
+            <div class="why-feat-title" data-i18n="whyFeat4Title">شفافية كاملة في التواصل</div>
+            <p class="why-feat-desc" data-i18n="whyFeat4Desc">تحديثات منتظمة، نسخ تفاعلية للمراجعة قبل التسليم النهائي، ولا مفاجآت في الأسعار أو المواعيد.</p>
           </div>
         </div>
       </div>
@@ -240,41 +247,41 @@
 <!-- PROCESS -->
 <section id="process">
   <div class="section-header reveal" style="text-align:center;margin:0 auto 4rem;">
-    <div class="section-tag" style="justify-content:center">OUR PROCESS</div>
-    <h2 class="section-title">كيف نعمل معاً؟</h2>
-    <p class="section-desc" style="margin:0 auto">أربع مراحل واضحة تضمن لك مشروعاً متكاملاً يتجاوز توقعاتك.</p>
+    <div class="section-tag" style="justify-content:center" data-i18n="processTag">OUR PROCESS</div>
+    <h2 class="section-title" data-i18n="processTitle">كيف نعمل معاً؟</h2>
+    <p class="section-desc" style="margin:0 auto" data-i18n="processDesc">أربع مراحل واضحة تضمن لك مشروعاً متكاملاً يتجاوز توقعاتك.</p>
   </div>
   <div class="process-timeline reveal">
     <div class="process-line"></div>
     <div class="process-step">
       <div class="step-content">
-        <div class="step-name">الاستكشاف والفهم</div>
-        <p class="step-desc">نبدأ بجلسة مكثفة لفهم فكرتك وأهداف عملك وجمهورك المستهدف والمنافسين.</p>
-        <div class="step-tags"><span class="step-tag">DISCOVERY</span><span class="step-tag">BRIEF</span><span class="step-tag">RESEARCH</span></div>
+        <div class="step-name" data-i18n="processStep1Name">الاستكشاف والفهم</div>
+        <p class="step-desc" data-i18n="processStep1Desc">نبدأ بجلسة مكثفة لفهم فكرتك وأهداف عملك وجمهورك المستهدف والمنافسين.</p>
+        <div class="step-tags"><span class="step-tag" data-i18n="processStep1Tag1">DISCOVERY</span><span class="step-tag" data-i18n="processStep1Tag2">BRIEF</span><span class="step-tag" data-i18n="processStep1Tag3">RESEARCH</span></div>
       </div>
       <div class="step-marker">١</div>
     </div>
     <div class="process-step">
       <div class="step-content">
-        <div class="step-name">التخطيط والهيكلة</div>
-        <p class="step-desc">نرسم الهيكل التجريبي لكل صفحة ونضع خريطة رحلة المستخدم قبل لمس أي لون.</p>
-        <div class="step-tags"><span class="step-tag">WIREFRAMES</span><span class="step-tag">USER FLOW</span><span class="step-tag">IA</span></div>
+        <div class="step-name" data-i18n="processStep2Name">التخطيط والهيكلة</div>
+        <p class="step-desc" data-i18n="processStep2Desc">نرسم الهيكل التجريبي لكل صفحة ونضع خريطة رحلة المستخدم قبل لمس أي لون.</p>
+        <div class="step-tags"><span class="step-tag" data-i18n="processStep2Tag1">WIREFRAMES</span><span class="step-tag" data-i18n="processStep2Tag2">USER FLOW</span><span class="step-tag" data-i18n="processStep2Tag3">IA</span></div>
       </div>
       <div class="step-marker">٢</div>
     </div>
     <div class="process-step">
       <div class="step-content">
-        <div class="step-name">التصميم البصري الفاخر</div>
-        <p class="step-desc">نضع اللمسة الجمالية الكاملة: الألوان، الخطوط، التباعد، والتفاصيل الدقيقة.</p>
-        <div class="step-tags"><span class="step-tag">UI DESIGN</span><span class="step-tag">TYPOGRAPHY</span><span class="step-tag">BRAND</span></div>
+        <div class="step-name" data-i18n="processStep3Name">التصميم البصري الفاخر</div>
+        <p class="step-desc" data-i18n="processStep3Desc">نضع اللمسة الجمالية الكاملة: الألوان، الخطوط، التباعد، والتفاصيل الدقيقة.</p>
+        <div class="step-tags"><span class="step-tag" data-i18n="processStep3Tag1">UI DESIGN</span><span class="step-tag" data-i18n="processStep3Tag2">TYPOGRAPHY</span><span class="step-tag" data-i18n="processStep3Tag3">BRAND</span></div>
       </div>
       <div class="step-marker">٣</div>
     </div>
     <div class="process-step">
       <div class="step-content">
-        <div class="step-name">التفاعل والتسليم</div>
-        <p class="step-desc">نرسل لك نموذجاً تفاعلياً حياً قبل الاعتماد النهائي، ثم نسلّم ملفات Figma منظمة وجاهزة للتكويد.</p>
-        <div class="step-tags"><span class="step-tag">PROTOTYPE</span><span class="step-tag">REVIEW</span><span class="step-tag">HANDOFF</span></div>
+        <div class="step-name" data-i18n="processStep4Name">التفاعل والتسليم</div>
+        <p class="step-desc" data-i18n="processStep4Desc">نرسل لك نموذجاً تفاعلياً حياً قبل الاعتماد النهائي، ثم نسلّم ملفات Figma منظمة وجاهزة للتكويد.</p>
+        <div class="step-tags"><span class="step-tag" data-i18n="processStep4Tag1">PROTOTYPE</span><span class="step-tag" data-i18n="processStep4Tag2">REVIEW</span><span class="step-tag" data-i18n="processStep4Tag3">HANDOFF</span></div>
       </div>
       <div class="step-marker">٤</div>
     </div>
@@ -284,84 +291,84 @@
 <!-- CONTACT -->
 <section id="contact">
   <div class="section-header reveal" style="text-align:center;margin:0 auto 4rem;">
-    <div class="section-tag" style="justify-content:center">GET IN TOUCH</div>
-    <h2 class="section-title">ابدأ مشروعك اليوم</h2>
-    <p class="section-desc" style="margin:0 auto">استشارة مجانية لا تلزمك بشيء. أخبرنا عن فكرتك وسنعود إليك خلال 24 ساعة.</p>
+    <div class="section-tag" style="justify-content:center" data-i18n="contactTag">GET IN TOUCH</div>
+    <h2 class="section-title" data-i18n="contactTitle">ابدأ مشروعك اليوم</h2>
+    <p class="section-desc" style="margin:0 auto" data-i18n="contactDesc">استشارة مجانية لا تلزمك بشيء. أخبرنا عن فكرتك وسنعود إليك خلال 24 ساعة.</p>
   </div>
   <div class="contact-grid">
     <div class="contact-info reveal">
       <div class="contact-item">
         <div class="contact-icon">✦</div>
         <div>
-          <div class="contact-label">البريد الإلكتروني</div>
-          <div class="contact-value">hello@vanguardcode.io</div>
+          <div class="contact-label" data-i18n="contactLabelEmail">البريد الإلكتروني</div>
+          <div class="contact-value" data-i18n="contactValueEmail">hello@vanguardcode.io</div>
         </div>
       </div>
       <div class="contact-item">
         <div class="contact-icon">◈</div>
         <div>
-          <div class="contact-label">واتساب / تيليجرام</div>
-          <div class="contact-value">+20 100 000 0000</div>
+          <div class="contact-label" data-i18n="contactLabelWhatsapp">واتساب / تيليجرام</div>
+          <div class="contact-value" data-i18n="contactValueWhatsapp">+20 100 000 0000</div>
         </div>
       </div>
       <div class="contact-item">
         <div class="contact-icon">⬡</div>
         <div>
-          <div class="contact-label">ساعات العمل</div>
-          <div class="contact-value">السبت – الخميس · 10ص – 8م</div>
+          <div class="contact-label" data-i18n="contactLabelHours">ساعات العمل</div>
+          <div class="contact-value" data-i18n="contactValueHours">السبت – الخميس · 10ص – 8م</div>
         </div>
       </div>
       <div class="contact-item">
         <div class="contact-icon">▲</div>
         <div>
-          <div class="contact-label">متوسط وقت الرد</div>
-          <div class="contact-value">أقل من 4 ساعات عمل</div>
+          <div class="contact-label" data-i18n="contactLabelReply">متوسط وقت الرد</div>
+          <div class="contact-value" data-i18n="contactValueReply">أقل من 4 ساعات عمل</div>
         </div>
       </div>
     </div>
     <div class="contact-form reveal">
       <div class="form-row">
         <div class="form-group">
-          <label class="form-label">الاسم الكريم</label>
-          <input class="form-input" type="text" placeholder="محمد أحمد" id="fname">
+          <label class="form-label" data-i18n="formLabelName">الاسم الكريم</label>
+          <input class="form-input" type="text" placeholder="محمد أحمد" id="fname" data-i18n-placeholder="formNamePlaceholder">
         </div>
         <div class="form-group">
-          <label class="form-label">البريد الإلكتروني</label>
-          <input class="form-input" type="email" placeholder="name@company.com" id="femail">
+          <label class="form-label" data-i18n="formLabelEmail">البريد الإلكتروني</label>
+          <input class="form-input" type="email" placeholder="name@company.com" id="femail" data-i18n-placeholder="formEmailPlaceholder">
         </div>
       </div>
       <div class="form-row">
         <div class="form-group">
-          <label class="form-label">رابط شركتك الحالية</label>
-          <input class="form-input" type="url" placeholder="www.yoursite.com (اختياري)" id="fsiteurl">
+          <label class="form-label" data-i18n="formLabelSite">رابط شركتك الحالية</label>
+          <input class="form-input" type="url" placeholder="www.yoursite.com (اختياري)" id="fsiteurl" data-i18n-placeholder="formSitePlaceholder">
         </div>
         <div class="form-group">
-          <label class="form-label">الميزانية المتوقعة</label>
+          <label class="form-label" data-i18n="formLabelBudget">الميزانية المتوقعة</label>
           <select class="form-select form-input" id="fbudget">
-            <option value="">اختر النطاق</option>
-            <option>أقل من $500</option>
-            <option>$500 – $1,500</option>
-            <option>$1,500 – $3,000</option>
-            <option>$3,000 – $5,000</option>
-            <option>أكثر من $5,000</option>
+            <option value="" data-i18n="budgetOptionDefault">اختر النطاق</option>
+            <option data-i18n="budgetOption1">أقل من $500</option>
+            <option data-i18n="budgetOption2">$500 – $1,500</option>
+            <option data-i18n="budgetOption3">$1,500 – $3,000</option>
+            <option data-i18n="budgetOption4">$3,000 – $5,000</option>
+            <option data-i18n="budgetOption5">أكثر من $5,000</option>
           </select>
         </div>
       </div>
       <div class="form-group">
-        <label class="form-label">نوع المشروع</label>
+        <label class="form-label" data-i18n="formLabelType">نوع المشروع</label>
         <select class="form-select form-input" id="ftype">
-          <option value="">اختر نوع المشروع</option>
-          <option>موقع شركة / خدمات</option>
-          <option>متجر إلكتروني</option>
-          <option>تطبيق موبايل</option>
-          <option>لوحة تحكم / SaaS</option>
-          <option>هوية بصرية</option>
-          <option>أخرى</option>
+          <option value="" data-i18n="typeOptionDefault">اختر نوع المشروع</option>
+          <option data-i18n="typeOption1">موقع شركة / خدمات</option>
+          <option data-i18n="typeOption2">متجر إلكتروني</option>
+          <option data-i18n="typeOption3">تطبيق موبايل</option>
+          <option data-i18n="typeOption4">لوحة تحكم / SaaS</option>
+          <option data-i18n="typeOption5">هوية بصرية</option>
+          <option data-i18n="typeOption6">أخرى</option>
         </select>
       </div>
       <div class="form-group">
-        <label class="form-label">تفاصيل المشروع</label>
-        <textarea class="form-textarea" id="fmessage" placeholder="أخبرنا عن فكرتك، جمهورك المستهدف، وأي مرجع تصميمي تحبه..."></textarea>
+        <label class="form-label" data-i18n="formLabelMessage">تفاصيل المشروع</label>
+        <textarea class="form-textarea" id="fmessage" placeholder="أخبرنا عن فكرتك، جمهورك المستهدف، وأي مرجع تصميمي تحبه..." data-i18n-placeholder="formMessagePlaceholder"></textarea>
       </div>
       <div class="form-success" id="formSuccess">
         ✦ &nbsp; شكراً! تم استلام طلبك وسنتواصل معك خلال 24 ساعة.
@@ -373,11 +380,11 @@
 
 <!-- FOOTER -->
 <footer>
-  <div class="footer-logo">Vanguard Code</div>
-  <div class="footer-copy">© 2025 Vanguard Code. جميع الحقوق محفوظة.</div>
+  <div class="footer-logo" data-i18n="footerLogo">Vanguard Code</div>
+  <div class="footer-copy" data-i18n="footerCopy">© 2025 Vanguard Code. جميع الحقوق محفوظة.</div>
   <div class="footer-links">
-    <a href="#">سياسة الخصوصية</a>
-    <a href="#">الشروط والأحكام</a>
+    <a href="#" data-i18n="footerPrivacy">سياسة الخصوصية</a>
+    <a href="#" data-i18n="footerTerms">الشروط والأحكام</a>
   </div>
 </footer>
 
