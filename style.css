@@ -61,6 +61,36 @@
   }
   .logo span { color: var(--white); }
 
+  .nav-right {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+  }
+
+  .lang-switch {
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+  }
+
+  .lang-btn {
+    border: 1px solid rgba(248,245,238,0.2);
+    background: transparent;
+    color: var(--white);
+    padding: 0.5rem 0.9rem;
+    font-size: 0.8rem;
+    cursor: none;
+    transition: all 0.25s ease;
+    border-radius: 999px;
+  }
+
+  .lang-btn.active,
+  .lang-btn:hover {
+    background: rgba(200,168,75,0.16);
+    border-color: var(--gold);
+    color: var(--gold);
+  }
+
   nav ul { display: flex; gap: 2.5rem; list-style: none; }
   nav ul a {
     color: var(--gray); font-size: 0.9rem; text-decoration: none;
